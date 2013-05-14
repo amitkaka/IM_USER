@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+<definition name="baseLayout" template="/tiles/baseLayout.jsp">
+<put-attribute name="title" value="Comviva|RSP|MMS"/>
+<put-attribute name="header" value="/tiles/baseHeader.jsp"/>
+<put-attribute name="main_content" value="/tiles/baseBody.jsp"/>
+<put-attribute name="footer" value="/tiles/baseFooter.jsp"/>
+</definition>
+<definition name="inbox.tiles" extends="baseLayout">
+<put-attribute name="title" value="Comviva|RSP|MMS|INBOX"/>
+<put-attribute name="header" value="/tiles/baseHeader.jsp"/>
+<put-attribute name="main_content" value="/pages/jsp/inbox/inboxMessages.jsp"/>
+<put-attribute name="footer" value="/tiles/baseFooter.jsp"/>
+</definition>
+</tiles-definitions>
