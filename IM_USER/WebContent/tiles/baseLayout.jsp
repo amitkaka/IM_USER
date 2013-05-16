@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/pagination.css" />
 <title><tiles:insertAttribute name="title" ignore="true"></tiles:insertAttribute>
 </title>
 </head>

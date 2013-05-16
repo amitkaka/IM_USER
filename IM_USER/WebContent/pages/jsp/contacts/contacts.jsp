@@ -9,41 +9,12 @@
 var messageIdContainer={};
 messageIdContainer.checkedMessages=[];
 var totalPages,startNumber,displayNumber,noPageElements;
+
 $("document").ready(function(){
 
-initializePagination();
-$("input:checkbox").change(function() {
-	messageIdContainer={};
-	messageIdContainer.checkedMessages=[];
-	$("input:checkbox").each(function(){	 
-	 if($(this).is(":checked")){
-		 messageIdContainer.checkedMessages.push($(this).attr("id"));
-	 }	 	 	 
-});
-	
-});
-$("#selectedNoOfRecords_").change(function(){reinitializePagination()});
 });
 
-function paginate() {
-	$("#pagination").paginate({
-		count 		: totalPages,
-		start 		: startNumber,
-		display     : displayNumber,
-		border					: true,
-		text_color  			: '#888',
-		background_color    	: '#EEE',	
-		text_hover_color  		: 'black',
-		background_hover_color	: '#CFCFCF',
-		onChange				: function(page){
-								$("#inboxMessages").attr("action","Inbox.html");
-								$("#startPageNumber_").val(page);
-								$("#selectedNoOfRecords_").val(noPageElements);
-// 								alert("No of records selected by user is " + noPageElements);					
-								$("#inboxMessages").submit();			
-		} 
-	});
-}
+
 
 function calculatePaginationParameters(){
 	startNumber=$("#startPageNumber_").val();
@@ -85,9 +56,9 @@ function checkMessages(){
 
 <div class="secTab mT30">
 	<ul>
-		<li class="sel" id="Messages"><a href="Inbox" id="message">Messages</a>
+		<li  id="Messages"><a href="Inbox" id="message">Messages</a>
 		</li>
-		<li id="Contacts"><a href="Contacts" id="contact">Contacts</a>
+		<li class="sel" id="Contacts"><a href="Contacts" id="contact">Contacts</a>
 		</li>
 		<li id="Subscriptions"><a href="#" id="subscription">My Subscriptions</a>
 		</li>

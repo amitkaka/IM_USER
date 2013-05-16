@@ -2,7 +2,8 @@ package com.comviva.im.userportal.domain.model.message;
 
 public class Message {
 
-	private String messageContent_;	
+	private String messageContent_;		
+
 	public String getMessageContent_() {
 		return messageContent_;
 	}

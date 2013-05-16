@@ -1,6 +1,6 @@
 package com.comviva.im.userportal.domain.model.message;
 
-public class InboxMessage  extends Message{
+public class InboxMessage extends Message{
 
 	
 	private String sender_;

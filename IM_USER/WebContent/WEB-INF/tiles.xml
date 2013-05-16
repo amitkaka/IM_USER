@@ -17,4 +17,10 @@
 <put-attribute name="main_content" value="/pages/jsp/inbox/inboxMessages.jsp"/>
 <put-attribute name="footer" value="/tiles/baseFooter.jsp"/>
 </definition>
+<definition name="contacts.tiles" extends="baseLayout">
+<put-attribute name="title" value="Comviva|RSP|MMS|INBOX"/>
+<put-attribute name="header" value="/tiles/baseHeader.jsp"/>
+<put-attribute name="main_content" value="/pages/jsp/contacts/contacts.jsp"/>
+<put-attribute name="footer" value="/tiles/baseFooter.jsp"/>
+</definition>
 </tiles-definitions>
