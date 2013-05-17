@@ -85,9 +85,9 @@ function checkMessages(){
 
 <div class="secTab mT30">
 	<ul>
-		<li class="sel" id="Messages"><a href="Inbox" id="message">Messages</a>
+		<li class="sel" id="Messages"><a href="Inbox.html" >Messages</a>
 		</li>
-		<li id="Contacts"><a href="Contacts" id="contact">Contacts</a>
+		<li id="Contacts"><a href="Contacts.html" >Contacts</a>
 		</li>
 		<li id="Subscriptions"><a href="#" id="subscription">My Subscriptions</a>
 		</li>

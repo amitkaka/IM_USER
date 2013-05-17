@@ -17,6 +17,7 @@ public class InboxAction  extends ActionSupport{
 	private int noRecords_=1;	
 	private int selectedNoOfRecords_=10;
 	private int defaultNoOfRecords_=10;
+	private int noOfExecutions;
 
 	static{
 		messagesFromDb= new ArrayList<InboxMessage>();
@@ -46,7 +47,10 @@ public class InboxAction  extends ActionSupport{
 			messagesFromDb.remove(Integer.parseInt(messageId));
 		}
 		
-		return "success";
+		return SUCCESS;
+	}
+	public void validate(){
+		noOfExecutions++;
 	}
 
 	public String checkInbox(){
@@ -66,10 +70,11 @@ public class InboxAction  extends ActionSupport{
 			}
 		}
 		messageList=messagesFromDb.subList(fromIndex, toIndex);			
-		System.out.println("total no of records in db are " + messagesFromDb.size());
-		System.out.println("no of records requested are " + selectedNoOfRecords_);
-		System.out.println("no of records that are going to be displayed are " + messageList.size());
-		System.out.println("current page number is "+startPageNumber_);
+//		System.out.println("total no of records in db are " + messagesFromDb.size());
+//		System.out.println("no of records requested are " + selectedNoOfRecords_);
+//		System.out.println("no of records that are going to be displayed are " + messageList.size());
+//		System.out.println("current page number is "+startPageNumber_);
+		System.out.println("No of time Executed " + noOfExecutions);
 		return SUCCESS;
 	}
 	

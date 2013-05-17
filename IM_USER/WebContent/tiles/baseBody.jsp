@@ -1,9 +1,9 @@
 
 <div class="secTab mT30">
 	<ul>
-		<li class="sel"><a href="#">Messages</a>
+		<li class="sel"><a href="Inbox.html">Messages</a>
 		</li>
-		<li><a href="#">Contacts</a>
+		<li><a href="Contacts.html">Contacts</a>
 		</li>
 		<li><a href="#">My Subscriptions</a>
 		</li>

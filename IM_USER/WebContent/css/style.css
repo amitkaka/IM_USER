@@ -135,7 +135,7 @@ hr.drkGray{background:#D1D1D1;color:#D1D1D1; margin-left:-10px; width:111%;heigh
 .btn a:hover{text-decoration:none}
 .btn a{display:block;background:url(../images/btnRit.png) top right no-repeat; padding: 5px 15px 8px 5px;	margin-left: 10px; color: #000;}
 
-.btn_deactive{ background:url(../images/btnLft.png) top left no-repeat;overflow: hidden; height:29px; float:left;}
+.btn_deactive{ background:url(../images/btnLft.png) top left no-repeat;overflow: hidden; height:29px; float:left;margin-left: 20px;}
 .btn_deactive a:hover{text-decoration:none}
 .btn_deactive a{display:block;background:url(../images/btnRit.png) top right no-repeat; padding: 5px 15px 8px 5px;	margin-left: 10px; color: #898989;}
 

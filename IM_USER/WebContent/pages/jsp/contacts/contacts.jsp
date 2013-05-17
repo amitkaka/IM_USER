@@ -5,13 +5,38 @@
 
 <script type="text/javascript" src="js/jquery-1.9.1.js">   </script>
 <script type="text/javascript" src="js/jquery.paginate.js"> </script>
+<script type="text/javascript" src="js/ddslick.js"> </script>
 <script>
 var messageIdContainer={};
 messageIdContainer.checkedMessages=[];
 var totalPages,startNumber,displayNumber,noPageElements;
+var ddData = [
+              {
+                  text: "Contacts",
+                  value: 1,
+                  selected: false,
+                  description: "Displays your contacts",                     
+              },
+              {
+                  text: "Groups",
+                  value: 2,
+                  selected: false,
+                  description: "Displays your Groups",
+                  imageSrc: "/IM_USER/images/groups.png"
+              }              
+];
 
 $("document").ready(function(){
-
+	$("#selectGroupsContacts").ddslick({
+	    data: ddData,
+	    width: 300,
+	    imagePosition: "left",
+	    selectText: "Select your Contacts and Groups",
+	    onSelected: function (data) {
+	       alert("you selected something" + data);
+	    }
+	});
+	
 });
 
 
@@ -56,9 +81,9 @@ function checkMessages(){
 
 <div class="secTab mT30">
 	<ul>
-		<li  id="Messages"><a href="Inbox" id="message">Messages</a>
+		<li  id="Messages"><a href="Inbox.html" id="message">Messages</a>
 		</li>
-		<li class="sel" id="Contacts"><a href="Contacts" id="contact">Contacts</a>
+		<li class="sel" id="Contacts.html"><a href="Contacts" id="contact">Contacts</a>
 		</li>
 		<li id="Subscriptions"><a href="#" id="subscription">My Subscriptions</a>
 		</li>
@@ -84,7 +109,7 @@ function checkMessages(){
 							<div class="btn">
 								<a href="rsp_compose.html">Compose</a>
 							</div>
-							<div class=" clrBoth"></div>
+							<div class="clrBoth"></div>
 						</div>
 						<div class="grayContainer grayContainer_slide">
 							<div class="grayContCorner corTL"></div>
@@ -107,15 +132,18 @@ function checkMessages(){
 
 					<!-- right panel start here -->
 					<div class="rightPenel mT10">
-						<h1 class="mB10">Inbox</h1>
+						<h1 class="mB10">Contacts</h1>
 						<div class="grayContainer litGrayBG mB10">
+<!-- 						Displaying a rounded corner by using css clip property(using a rounded image and then clipping it usign clip:rect(top,right,bottom,left) property)-->
 							<div class="grayContCorner corTL"></div>
 							<div class="grayContCorner corTR"></div>
 							<div class="pd7">
-								<div class="sectionFour bdrRightDot mT5">
-									<span>Message Type: <strong>SMS and MMS </strong> </span> <span
-										class="downArrow_icon"></span>
-								</div>
+<!-- 								<div class="sectionFour bdrRightDot mT5"> -->
+<%-- 										<span>Message Type: <strong>SMS and MMS </strong> </span> <span --%>
+<%-- 											class="downArrow_icon"></span> --%>
+<!-- 								</div> -->
+							<div id="selectGroupsContacts">
+							</div>
 								<div class="btn_deactive">
 									<a href="javascript:checkMessages()">Delete</a>
 								</div>
