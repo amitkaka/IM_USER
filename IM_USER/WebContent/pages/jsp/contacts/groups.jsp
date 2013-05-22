@@ -45,9 +45,7 @@ $("document").ready(function(){
 	    imagePosition: "left",
 	    selectText: "Select your Contacts and Groups",
 	    onSelected: function (data) {
-	       if(data.selectedIndex==1){
-	    	   $("#groupForm").submit();
-	       }
+	       alert("you selected something" + data);
 	    }
 	});
 	
@@ -236,9 +234,6 @@ function submitValidateAdd(){
 					<form action="DeleteContact.html" id="delContact">
 					<input type="hidden" id="delContactIndex" name="contactIndex"/>
 					</form>
-					<!--  form for selecting groups -->
-					<form action="Groups.html" id="groupForm">								
-					</form>					
 					<!-- right panel start here -->
 					<div class="rightPenel mT10">
 						<h1 class="mB10">Contacts</h1>
@@ -291,8 +286,9 @@ function submitValidateAdd(){
 										<th width="5%" class="no_sep center"><input
 											type="checkbox" onclick="checkedAll('frm1');" /></th>
 										<th width="3%" class="no_sep">&nbsp;</th>
-										<th width="16%" class="no_sep">Name</th>
-										<th width="30%" class="no_sep">Contact Number</th>										
+										<th width="16%" class="no_sep">Group Name</th>
+										<th width="30%" class="no_sep">No of Members</th>
+										<th width="20%" class="no_sep">View Members</th>										
 										<th width="5%" class="no_sep">Edit</th>
 										<th width="11%" class="no_sep">Delete</th>
 									</tr>

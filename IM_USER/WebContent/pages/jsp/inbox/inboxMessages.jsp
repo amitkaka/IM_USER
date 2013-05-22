@@ -131,7 +131,7 @@ function checkMessages(){
 							<div class="grayContCorner corBR"></div>
 						</div>
 					</div>
-
+					
 					<!-- left panel end here -->
 
 					<!-- right panel start here -->
