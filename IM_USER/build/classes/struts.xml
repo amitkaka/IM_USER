@@ -40,5 +40,8 @@
 		<action name="Groups" method="checkGroups" class="com.comviva.im.userportal.action.contacts.GroupAction">
 		<result name="success" type="tiles">groups.tiles</result>
 		</action>
+		<action name="ViewMembers" method="checkMembers" class="com.comviva.im.userportal.action.contacts.GroupAction">
+		<result name="success" type="tiles">viewMembers.tiles</result>
+		</action>
 	</package>
 </struts>

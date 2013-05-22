@@ -29,7 +29,12 @@ var ddData = [
 
 $("document").ready(function(){	
 	initializePopUp();
-	$("a.delete-contact").click(function (){
+$("a.checkMembers").click(function(){
+			alert("The selected group name is " + $(this).closest("tr").find("#groupName_").val());
+			$("#viewGroupName").val($(this).closest("tr").find("#groupName_").val());
+			$("#viewMembers").submit();
+	});
+$("a.delete-contact").click(function (){
 		var choice=confirm("Sure to delete this contact ");
 		if(choice==true){
 				alert("The contact index for this element is" + $(this).closest("tr").find("#inboxMessages_contactId").val());
@@ -39,6 +44,7 @@ $("document").ready(function(){
 			return false;			
 		}			
 	});
+	$()
 	$("#selectGroupsContacts").ddslick({
 	    data: ddData,
 	    width: 300,
@@ -234,9 +240,13 @@ function submitValidateAdd(){
 					<form action="DeleteContact.html" id="delContact">
 					<input type="hidden" id="delContactIndex" name="contactIndex"/>
 					</form>
+<!-- 					form for submitting the groupName for viewing groupMembers of the selected group -->
+					<form action="ViewMembers.html" id="viewMembers">
+					<input type="hidden" id="viewGroupName" name="groupName_"/>
+					</form>
 					<!-- right panel start here -->
 					<div class="rightPenel mT10">
-						<h1 class="mB10">Contacts</h1>
+						<h1 class="mB10">Groups</h1>
 						<div class="grayContainer litGrayBG mB10">
 <!-- 						Displaying a rounded corner by using css clip property(using a rounded image and then clipping it usign clip:rect(top,right,bottom,left) property)-->
 							<div class="grayContCorner corTL"></div>
@@ -292,22 +302,24 @@ function submitValidateAdd(){
 										<th width="5%" class="no_sep">Edit</th>
 										<th width="11%" class="no_sep">Delete</th>
 									</tr>
-									<s:iterator value="contactsList" status="contactsIndex">
+									<s:iterator value="groupsList_" status="groupsIndex">
 										<tr>
 											<td class="noRitBdr center"><s:checkbox name="checkbox"
 													fieldValue="true" theme="simple"
-													id="%{#contactsIndex.index}" />
-											<s:hidden name="contactId" value="%{#contactsIndex.index}"></s:hidden>		
+													id="%{#groupsIndex.index}" />
+											<s:hidden name="groupName_" value="%{groupName_}" id="groupName_"></s:hidden>		
 											</td>
-											<td class="center  noRitBdr"><span class=" grey_star"></span>											
+											<td class="center  noRitBdr"><span class="grey_star"></span>											
 											</td>
 											<td class="noRitBdr bolder"><s:property
-													value="contactName_" /></td>
+													value="groupName_" /></td>
 											<td class="noRitBdr bolder"><s:property
-													value="contactNumber_" />
+													value="noMembers_" />
+											</td>
+											<td class="noRitBdr bolder"><a href="" class="checkMembers"><img src="/IM_USER/images/members.png" style="width:35px;"/></a>
 											</td>
 											<td class="noRitBdr center"><a href="#login-box" class="login-window"><img src="/IM_USER/images/edit.gif"/></a></td>
-											<td class="noRitBdr bolder"><a href="javascript:deleteContact()" class="delete-contact"><img src="/IM_USER/images/delete_group.png" style="width: 25px;"/></a></td>
+											<td class="noRitBdr bolder"><a href="" class="delete-contact"><img src="/IM_USER/images/delete_group.png" style="width: 25px;"/></a></td>
 										</tr>
 									</s:iterator>
 								</table>							
